@@ -1,0 +1,46 @@
+footer {
+    position: fixed;
+    left:0;
+    bottom: 0;
+    width:100%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    background-color: rgba(103, 58, 183, 1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+ul {
+    padding:0;
+    margin:0;
+    display:flex;
+    align-items: center;
+    height:100%;
+}
+
+.footerItem {
+    list-style: none;
+    padding-left: 1rem;
+    padding-right:1rem;
+    font-size: 1rem;
+}
+
+.footerIcon {
+    list-style: none;
+    padding-left: 1rem;
+    padding-right:1rem;
+    font-size: 2rem;
+    padding-top: 0.5rem;
+}
+
+fa-icon {
+    color: white;
+    font-size: 1.5em;
+    
+}
+
+    fa-icon:hover {
+        color: rgb(250, 190, 170)
+    }
