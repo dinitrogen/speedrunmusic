@@ -3,13 +3,17 @@ import { AboutComponent } from './about/about.component';
 import { RouterModule,Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { MusicComponent } from './music/music.component';
+import { AppComponent } from './app.component';
 
 
 const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
+  
   {path: 'home', component: HomeComponent},
   {path: 'about', component: AboutComponent},
-  {path: 'music', component: MusicComponent}
+  {path: 'music', component: MusicComponent},
+  {path: '', component: HomeComponent},
+  {path:'**', component: HomeComponent}
+  
 ]
 
 @NgModule({
@@ -17,7 +21,8 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(
-      appRoutes
+      appRoutes,
+      { useHash: true }
     )
   ],
   exports: [RouterModule]
