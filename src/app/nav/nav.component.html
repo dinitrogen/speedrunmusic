@@ -1,18 +1,56 @@
-<mat-toolbar color="primary">
-    
 
+  <nav>
     
+    <a class="navLogo" routerLink="/home">
         
-            <a class="speedrun-logo-link" routerLink="/home"><img class="speedrun-logo" src="assets/images/banner-right-bandcamp.png">
-            </a>
-   
-    <span class="spacer"></span>
-    
-    <button mat-flat-button color="primary" routerLink="/music">Music</button>
-    <button mat-flat-button color="primary" routerLink="/about">About</button>
+        <img *ngIf="isMobilePortrait" class="speedrun-logo-small" src="assets/images/speedrun-social-slant.svg">
+        <img *ngIf="!isMobilePortrait" class="speedrun-logo" src="assets/images/banner-logo.svg">
+    </a>
+
+
+    <div *ngIf="isMobilePortrait" class="menuIcon">
         
-    
-    <button mat-icon-button>
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-toolbar>
+        <mat-icon *ngIf="isMenuOpen" (click)="toggleMenu()">close</mat-icon>
+        <mat-icon *ngIf="!isMenuOpen" (click)="toggleMenu()">menu</mat-icon>
+    </div>
+
+    <ul  *ngIf="!isMobilePortrait" class="menu">
+        <li  class="menuItem">
+            <a class="menuLink" routerLink="/music">Music</a>
+            <!-- <a mat-flat-button color="primary" routerLink="/music">Music</a> -->
+        </li>
+
+        <li class="menuItem">
+            <a class="menuLink" routerLink="/about">About</a>
+        </li>
+        <li class="menuItem">
+            <a class="menuLink" routerLink="/">Store</a>
+        </li>
+        <li class="menuItem">
+            <a class="menuLink" routerLink="/">Contact</a>
+            
+        </li>
+    </ul>
+
+    <ul  *ngIf="isMobilePortrait" [ngClass]="isMenuOpen ? 'menu-mobile': 'menu-mobile-closed'">
+        <li  class="menuItem-mobile">
+            <a class="menuLink-mobile" (click)="toggleMenu()" routerLink="/music">Music</a>
+            <!-- <a mat-flat-button color="primary" routerLink="/music">Music</a> -->
+        </li>
+
+        <li class="menuItem-mobile">
+            <a class="menuLink-mobile" (click)="toggleMenu()" routerLink="/about">About</a>
+            <!-- <button mat-flat-button color="primary" routerLink="/about">About</button> -->
+        </li>
+
+        <li class="menuItem-mobile">
+            <a class="menuLink-mobile" (click)="toggleMenu()" routerLink="/store">Store</a>
+        </li>
+
+        <li class="menuItem-mobile">
+            <a class="menuLink-mobile" (click)="toggleMenu()" routerLink="/contact">Contact</a>
+        </li>
+    </ul>
+
+
+</nav>

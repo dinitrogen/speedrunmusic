@@ -18,6 +18,8 @@ import { HomeComponent } from './home/home.component';
 import { NavComponent } from './nav/nav.component';
 import { MusicComponent } from './music/music.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { StoreComponent } from './store/store.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AboutComponent,
     HomeComponent,
     NavComponent,
-    MusicComponent
+    MusicComponent,
+    StoreComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
